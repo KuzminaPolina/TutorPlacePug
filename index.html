@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>TutorPlace</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="ProjectName — описание">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__logo-wrpr">
+            <div class="header__decor"></div><span class="header__logo"> AI</span>
+          </div>
+          <nav class="main-nav">
+            <div class="main-nav__wrapper">
+              <ul class="main-nav__list">
+                <li class="main-nav__item"><span class="main-nav__link is-active">Главная</span>
+                </li>
+                <li class="main-nav__item"><a class="main-nav__link" href="#">Преимущества</a>
+                </li>
+                <li class="main-nav__item">
+                  <button class="btn main-nav__btn" type="button" data-open-modal="form">Получить доступ</button>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <button class="main-nav__toggle btn-reset" type="button" aria-label="Переключатель отображения меню" aria-pressed="false">
+            <svg class="main-nav__open" width="20" height="20" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#menu-open"></use>
+            </svg>
+            <svg class="main-nav__close visually-hidden" width="20" height="20" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#menu-close"></use>
+            </svg>
+          </button>
+        </div>
+      </header>
+      <main class="main">
+        <section class="hero">
+          <div class="hero__text">
+            <h1 class="hero__header">Нейросеть</h1><span class="hero__underheader">может всё!</span>
+            <p class="hero__tagline">Мы уже живем в этой удивительной реальности</p>
+            <button class="btn hero__button" type="button" data-open-modal="form">Погрузиться в новый мир</button>
+          </div>
+          <div class="hero__picture">
+            <picture class="hero__pic">
+              <source type="image/webp" media="(max-width: 767px)" srcset="./img/content/hero-img-mobile.webp 1x, ./img/content/hero-img-mobile@2x.webp 2x">
+              <source type="image/webp" srcset="./img/content/hero-img.webp 1x, ./img/content/hero-img@2x.webp 2x">
+              <source type="image/jpg" media="(max-width: 767px)" srcset="./img/content/hero-img-mobile.png 1x, ./img/content/hero-img-mobile@2x.png 2x"><img class="hero__img" src="img/content/hero-img.png" srcset="img/content/hero-img@2x.png 2x" width="640" height="726" alt="header image">
+            </picture>
+          </div>
+        </section>
+        <section class="advantages">
+          <div class="advantages__text">
+            <h2 class="advantages__header">Преимущества курса</h2>
+            <p class="advantages__tagline">Хотите открыть бизнес?</p>
+            <p class="advantages__tagline">Поможем создать <span class="advantages__highlight">корректный промт</span>, чтобы вы получили максимально корректный вариант под ваши нужды!</p>
+            <p class="advantages__decor">Преимущества</p>
+          </div>
+          <div class="advantages__cards">
+            <ul class="advantages__list">
+              <li class="advantages__card">
+                <svg width="48" height="48" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-one"></use>
+                </svg>
+                <p class="advantages__title">Хотите открыть бизнес?</p>
+                <p class="advantages__decr">Нейросеть поможет составить бизнес-план, рассчитать расходы, нарисовать логотип, найти место получше и станет вашим главным деловым партнером</p>
+              </li>
+              <li class="advantages__card">
+                <svg width="48" height="48" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-two"></use>
+                </svg>
+                <p class="advantages__title">Мечтаете об отпуске?</p>
+                <p class="advantages__decr">Нейросеть поможет найти место по вашим запросам, выбрать наилучший сезон, собрать чемодан, подыскать где остановиться и сделать ваш отпуск незабываемым</p>
+              </li>
+              <li class="advantages__card">
+                <svg width="48" height="48" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-three"></use>
+                </svg>
+                <p class="advantages__title">Вы студент и нуждаетесь в помощи в учебе?</p>
+                <p class="advantages__decr">Нет проблем! Нейросеть — ваш лучший друг, который поможет написать курсовую, решить сложный тест и подготовиться к экзаменам</p>
+              </li>
+              <li class="advantages__card">
+                <svg width="48" height="48" aria-hidden="true">
+                  <use xlink:href="img/sprite.svg#icon-four"></use>
+                </svg>
+                <p class="advantages__title">Интересует здоровый образ жизни?</p>
+                <p class="advantages__decr">Нейросеть поделится советами по сбалансированному питанию, безопасным тренировкам и поддержке мотивации.</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="modal modal--preload modal--form" data-modal="form">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <p class="modal__description">Овладей нейросетями!</p>
+          <p class="modal__tagline">Получи в подарок доступ ко всем курсам</p>
+          <picture class="modal__pic">
+            <source type="image/webp" media="(max-width: 767px)" srcset="./img/content/modal-img-mobile.webp 1x, ./img/content/modal-img-mobile@2x.webp 2x">
+            <source type="image/webp" srcset="./img/content/modal-img.webp 1x, ./img/content/modal-img@2x.webp 2x">
+            <source type="image/jpg" media="(max-width: 767px)" srcset="./img/content/modal-img-mobile.png 1x, ./img/content/modal-img-mobile@2x.png 2x"><img class="modal__img" src="img/content/modal-img.png" srcset="img/content/modal-img@2x.png 2x" width="640" height="726" alt="header image">
+          </picture>
+          <form class="modal__form" action="">
+            <div class="custom-input modal__input">
+              <label>
+                <input type="email" name="user-mail" placeholder="Введите e-mail">
+              </label>
+            </div>
+            <button class="btn modal__submit" type="submit">Получить доступ</button>
+          </form>
+          <button class="modal__close-btn" type="button" aria-label="Закрыть попап" data-close-modal>
+            <svg width="15" height="15" aria-hidden="true">
+              <use xlink:href="img/sprite.svg#menu-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
