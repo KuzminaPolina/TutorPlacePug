@@ -1,0 +1,48 @@
+.modal__description {
+  margin: 0;
+  font-family: "Involve", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 48px;
+  text-align: center;
+  color: $color-default-white;
+
+  @include vp-767 {
+    font-size: 30px;
+    line-height: 33px;
+  }
+}
+
+.modal__tagline {
+  font-family: "Evolventa", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 26px;
+  text-align: center;
+  color: $color-default-white;
+
+  @include vp-767 {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+button.modal__submit {
+  display: inline-block;
+  width: 100%;
+  border-radius: 18px;
+  text-align: center;
+
+  font-family: "Evolventa", "Arial", sans-serif;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 26px;
+
+  @include vp-767 {
+    font-size: 16px;
+    line-height: 18px;
+    border-radius: 9px;
+  }
+}

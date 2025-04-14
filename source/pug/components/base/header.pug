@@ -7,24 +7,19 @@ mixin header(headerMods, currentUrl)
       },
       {
         href: "#",
-        text: "Страница 2"
-      },
-      {
-        href: "#",
-        text: "Страница 3"
+        text: "Преимущества"
       },
     ]
 
   header.header(class=headerMods)
     .container
-      if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
-      else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
+      .header__logo-wrpr
+        .header__decor
+        if(currentUrl === "index.html")
+          span.header__logo  AI
+        else
+          a.header__logo(href="index.html", aria-label="Переход на главную") AI
       nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
         .main-nav__wrapper
           ul.main-nav__list
             each link in headerLinks
@@ -34,3 +29,8 @@ mixin header(headerMods, currentUrl)
                   span.main-nav__link.is-active= link.text
                 else
                   a.main-nav__link(href=link.href)= link.text
+            li.main-nav__item
+              +btn({text: "Получить доступ"})(data-open-modal="form", class="main-nav__btn")
+      button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
+        +icon("menu-open", 20, 20)(class="main-nav__open")
+        +icon("menu-close", 20, 20)(class="main-nav__close visually-hidden")

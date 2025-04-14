@@ -6,22 +6,140 @@
     margin-left: 60px;
     padding: 0;
 
-    list-style: none;
+    @include vp-767 {
+      flex-direction: column;
+      row-gap: 36px;
+      padding: 36px 56px 30px;
+      background-color: $color-default-black;
+      margin: 0;
+    }
+  }
+
+  &__wrapper {
+    @include vp-767 {
+      padding-top: 0;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 80px;
+      left: 0;
+      z-index: 10;
+      display: none;
+    }
+  }
+
+  &__wrapper--open {
+    @include vp-767 {
+      display: block;
+    }
   }
 
   &__item {
-    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 22px;
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+
+    @include vp-767 {
+      background-color: $color-medium-violet-red;
+      border-color: $color-medium-violet-red;
+    }
+
+    &:hover {
+      border-color: $color-hollywood-cerise;
+      background-color: $color-hollywood-cerise;
+    }
+
+    &:active {
+      background-color: $color-medium-violet-red;
+      border-color: $color-medium-violet-red;
+    }
+  }
+
+  &__item button {
+    margin: 0;
+    padding: 0;
+    background: none;
+    font-family: "Evolventa", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: $color-default-white;
+
+    &:hover {
+      background-color: $color-transparent;
+      color: $color-default-white;
+      opacity: 1;
+      box-shadow: none;
+    }
+
+    &:active {
+      background-color: $color-transparent;
+      color: $color-default-black;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 105px;
+
+    @include vp-1439 {
+      margin-right: 64px;
+    }
+
+    @include vp-1279 {
+      margin-right: 46px;
+    }
+
+    @include vp-1023 {
+      margin-right: 30px;
+    }
   }
 
   &__link {
     color: $color-default-white;
+    font-family: "Evolventa", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 26px;
+    opacity: 1;
 
-    &.is-active {
-      opacity: 0.6;
+    &:hover {
+      opacity: 1;
+      color: $color-hollywood-cerise;
+    }
+
+    &:active {
+      opacity: 1;
+      color: $color-medium-violet-red;
+    }
+
+    @include vp-767 {
+      font-family: "Evolventa", "Arial", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18px;
+      color: $color-default-white;
     }
   }
 
   &__toggle {
     display: none;
+
+    @include vp-767 {
+      display: block;
+      background: none;
+      border: none;
+    }
   }
 }

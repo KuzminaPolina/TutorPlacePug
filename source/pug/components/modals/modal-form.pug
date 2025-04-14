@@ -1,0 +1,18 @@
+mixin modal-form()
+  p.modal__description Овладей нейросетями!
+  p.modal__tagline Получи в подарок доступ ко всем курсам
+  picture.modal__pic
+        source(type="image/webp", media="(max-width: 767px)", srcset="./img/content/modal-img-mobile.webp 1x, ./img/content/modal-img-mobile@2x.webp 2x")
+        source(type="image/webp", srcset="./img/content/modal-img.webp 1x, ./img/content/modal-img@2x.webp 2x")
+        source(type="image/jpg", media="(max-width: 767px)", srcset="./img/content/modal-img-mobile.png 1x, ./img/content/modal-img-mobile@2x.png 2x")
+        img.modal__img(src="img/content/modal-img.png", srcset="img/content/modal-img@2x.png 2x", width="640", height="726", alt="header image")
+  form.modal__form(action="")
+    +custom-input({
+              inputType: "email",
+              inputPlaceholder: "Введите e-mail",
+              inputName: "user-mail",
+            })(class="modal__input")
+    +btn({
+      text: "Получить доступ",
+      type: "submit"
+    })(class="modal__submit")

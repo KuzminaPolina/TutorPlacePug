@@ -4,6 +4,33 @@ import {Form} from './modules/form-validate/form';
 import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 
+function openMenu() {
+  const openBtn = document.querySelector('.main-nav__open');
+  const closeBtn = document.querySelector('.main-nav__close');
+  const main = document.querySelector('.main');
+  const menu = document.querySelector('.main-nav__wrapper');
+  function open() {
+    openBtn.classList.add('visually-hidden');
+    closeBtn.classList.remove('visually-hidden');
+    menu.classList.add('main-nav__wrapper--open');
+    main.classList.add('main--open');
+  }
+  openBtn.addEventListener('click', open);
+}
+
+function closeMenu() {
+  const openBtn = document.querySelector('.main-nav__open');
+  const closeBtn = document.querySelector('.main-nav__close');
+  const main = document.querySelector('.main');
+  const menu = document.querySelector('.main-nav__wrapper');
+  function open() {
+    closeBtn.classList.add('visually-hidden');
+    openBtn.classList.remove('visually-hidden');
+    menu.classList.remove('main-nav__wrapper--open');
+    main.classList.remove('main--open');
+  }
+  closeBtn.addEventListener('click', open);
+}
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -19,6 +46,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
+    openMenu();
+    closeMenu();
     initModals();
     uploadFile();
     uploadImageDrop();

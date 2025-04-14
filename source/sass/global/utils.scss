@@ -7,24 +7,19 @@
   /* stylelint-disable-next-line */
   min-height: calc(100 * var(--vh, 1vh));
 
-  .header,
-  .footer {
+  .header {
     flex-shrink: 0;
   }
 
   main {
+    color: $color-default-white;
+    background-color: $color-default-black;
     flex-grow: 1;
   }
 }
 
-.rouble {
-  /* stylelint-disable */
-  font-weight: 400 !important;
-  /* stylelint-enable */
-  font-family: $ff-rouble;
-  /* stylelint-disable */
-  text-transform: lowercase !important;
-  /* stylelint-enable */
+.main--open {
+  filter: blur(3px);
 }
 
 .visually-hidden {

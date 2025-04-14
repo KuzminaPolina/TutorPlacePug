@@ -146,6 +146,7 @@ export class Modals {
 
   open(modalName = this._modalName) {
     const modal = document.querySelector(`[data-modal="${modalName}"]`);
+    const main = document.querySelector('.main');
 
     if (!modal || modal.classList.contains('is-active')) {
       return;
@@ -164,6 +165,7 @@ export class Modals {
 
     this._setSettings(modalName);
     modal.classList.add('is-active');
+    main.classList.add('main--open');
 
     if (modalName !== this._stackModalElements[this._stackModalElements.length - 1]) {
       this._stackModalElements.push(modalName);
@@ -214,6 +216,7 @@ export class Modals {
 
   close(modalName = this._modalName) {
     const modal = document.querySelector(`[data-modal="${modalName}"]`);
+    const main = document.querySelector('.main');
     document.removeEventListener('click', this._documentClickHandler);
 
     if (!modal || !modal.classList.contains('is-active')) {
@@ -225,6 +228,7 @@ export class Modals {
     }
 
     modal.classList.remove('is-active');
+    main.classList.remove('main--open');
     this._removeListeners(modal);
     this._stopInteractive(modal);
 
